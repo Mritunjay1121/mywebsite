@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Column Scrollable Page</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    background-color:  #f9f9f9; /* Change this color to the one you want */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  .header {
+    padding: 20px;
+    margin: 90px 30px 0; 
+    width: 63%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 105px;
+    margin-left: -43px;
+    font-family: 'Lexend', sans-serif;
+  }
+  #recent-photos {
+    align-items: center;
+    display:grid;
+    gap:15px;
+    grid-template-columns:1fr 1fr;
+    padding-left: 90px;
+
+  }
+  .photo {
+    width: 100%;
+    height: 80px;
+    object-fit:covers;
+  }
+  h2 {
+    font-size: 30px; /* Set the desired font size */
+    font-family: 'Tiempos Fine', serif; /* Set the desired font type */
+    font-weight: 700; /* Set the desired boldness in pixels */
+
+  }
+
+  .container {
+
+   
+  
+  
+    display: flex;
+    flex: 1;
+    padding: 5px;
+    margin-top: 20px;
+    width: 70%;
+    margin: 0; /* Adjust margin for columns container */
+
+    box-sizing: border-box; /* Include padding in width calculation */
+
+  }
+  .left-column {
+    flex: 0 0 30%;
+    background-color: rgba(0,0,0,0);
+    overflow-y: auto;
+    padding: 20px;
+    margin-right: 10px; /* Add spacing between columns */
+  }
+  .right-column {
+    flex: 1;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0);
+
+    padding: 20px;
+  }
+  .padding-text {
+    margin: 0 20px 10px; /* Adjust margin for text below columns */
+    margin-left: 43px;
+
+  }
+  h1 {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-left: 85px; /* Align with the left column */
+    font-size: 40px;
+    font-family: 'Lexend', sans-serif; /* Add your preferred font-family here */
+    margin-top: -10px; /* Align with the left column */
+
+  }
+
+
+  h-inner {
+    font-size: 40px; /* Set the desired font size */
+    font-family: 'Lexend', serif; /* Set the desired font type */
+    font-weight: 700; /* Set the desired boldness in pixels */
+    text-decoration: underline; 
+  }
+  .taglines {
+    text-align: left;
+    margin-left: 85px; /* Align with the left column */
+  }
+
+
+
+
+
+
+
+  .a-card {
+    background: #fff;
+    border: none !important;
+    border-bottom-left-radius: 0 !important;
+    border-left: 7px solid #000 !important;
+    border-left: 7px solid var(--card-border-color) !important;
+    border-top-left-radius: 0 !important;
+    display: block;
+    margin: 0 auto; /* Removed margin to remove space above and below the card */
+    padding: 1.5em;
+    text-align: left;
+    position: relative; /* Added position relative to use absolute positioning */
+    box-shadow: 4px 4px 15px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+  }
+
+
+
+  .vertical-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 7px; /* Width of the vertical lines */
+    background-color: #000;
+    left: -2px; /* Positioning for the left vertical line */
+  }
+
+  .vertical-linee {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8.8px; /* Width of the vertical lines */
+    background-color: #000;
+    right: -2px; /* Positioning for the right vertical line */
+  }
+  .bullet-point {
+  position: relative;
+  padding-left: 20px; /* Adjust the padding to position the text appropriately */
+  }
+
+  .bullet-point::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px; /* Adjust the width of the line */
+    height: 100%; /* Adjust the height of the line */
+    background-color: black; /* Adjust the color of the line */
+  }
+
+
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Roboto:wght@300;400;500;700&family=Tiempos+Fine:wght@400;700&display=swap">
+
+</head>
+<body>
+
+ 
+ 
+ 
+  <div class="header">
+    <h1>
+      <h1 style="text-decoration: underline; text-decoration-thickness: 8px; text-underline-offset: 20px; font-weight: bold;">MRITUNJAY</h-inner>
+      <img src="data:image/jpeg;base64,{{ img_str }}" alt="icon" style="height: 90px; vertical-align: -2rem; margin-left: 25px; border-radius: 96px; border:6px solid #ff5100">
+      </h1>
+    </h1>
+
+    <div class="taglines">
+      <br> </br>
+      <h3 id="tagline1" style="font-size: 140%; font-weight: 500; font-family: 'Lexend', sans-serif; font-weight: bold; margin: 0;">Sagely interested in Machine Learning to contribute in the form of articles.</h3>
+      <h3 id="tagline2" style="font-size: 140%; font-weight: 500; font-family: 'Lexend', sans-serif; font-weight: bold;margin: 0;"> Open to work with same mindset.   </h3>
+    </div>
+  </div>
+
+
+
+
+  <br> </br>
+  <br> </br>
+
+  <div class="container">
+    <!-- <div class="left-column" style="padding-left: 78px;"> -->
+
+    <div class="left-column" >
+      <h2 style="margin-bottom: 0; padding-left: 90px">Know Me</h2>
+
+      <ul style="padding-inline-start: 0; padding-left: 90px">
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="/" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24" fill="#007c52"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg" width="24" height="24" style="margin-right: 6px; margin-top: -2px; font-size: 24px;">
+              <path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">Home</span>
+            </span>
+            
+          </a>
+        </li>
+
+
+        
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="/myendeavors" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24" fill="#007c52"fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg" width="24" height="24" style="margin-right: 6px; margin-top: -2px;font-size: 24px;">
+              <path d="M7.38938 16.5386C5.33894 15.0901 4 12.7014 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 12.7014 18.6611 15.0901 16.6106 16.5386L18.6936 21.2996C18.8043 21.5526 18.6889 21.8474 18.4359 21.9581C18.3727 21.9857 18.3045 22 18.2355 22H5.76451C5.48837 22 5.26451 21.7761 5.26451 21.5C5.26451 21.431 5.27878 21.3628 5.30643 21.2996L7.38938 16.5386ZM14.1246 15.846L15.4567 14.905C17.041 13.7858 18 11.9752 18 10C18 6.68629 15.3137 4 12 4C8.68629 4 6 6.68629 6 10C6 11.9752 6.95901 13.7858 8.54335 14.905L9.87539 15.846L8.05803 20H15.942L14.1246 15.846ZM8.11851 10.9704L10.0593 10.4852C10.2761 11.3553 11.0628 12 12 12C12.9372 12 13.7239 11.3553 13.9407 10.4852L15.8815 10.9704C15.4478 12.7106 13.8745 14 12 14C10.1255 14 8.55217 12.7106 8.11851 10.9704Z"></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">My Endeavors</span>
+            </span>
+          </a>
+        </li>
+
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="/nowpage" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24"fill="#007c52" fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg" width="24" height="24" style="margin-right: 6px; margin-top: -2px;font-size: 24px;">
+              <path d="M16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM13 11H17V13H11V6H13V11Z" ></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">Now Page</span>
+            </span>
+          </a>
+        </li>
+
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="/projects" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24" fill="#007c52" fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg"  width="24" height="24" style="margin-right: 6px; margin-top: -2px;font-size: 24px;">
+              <path d="M20.0834 15.1999L21.2855 15.9212C21.5223 16.0633 21.599 16.3704 21.457 16.6072C21.4147 16.6776 21.3559 16.7365 21.2855 16.7787L12.5145 22.0412C12.1979 22.2313 11.8022 22.2313 11.4856 22.0412L2.71463 16.7787C2.47784 16.6366 2.40106 16.3295 2.54313 16.0927C2.58536 16.0223 2.64425 15.9634 2.71463 15.9212L3.91672 15.1999L12.0001 20.0499L20.0834 15.1999ZM20.0834 10.4999L21.2855 11.2212C21.5223 11.3633 21.599 11.6704 21.457 11.9072C21.4147 11.9776 21.3559 12.0365 21.2855 12.0787L12.0001 17.6499L2.71463 12.0787C2.47784 11.9366 2.40106 11.6295 2.54313 11.3927C2.58536 11.3223 2.64425 11.2634 2.71463 11.2212L3.91672 10.4999L12.0001 15.3499L20.0834 10.4999ZM12.5145 1.30864L21.2855 6.5712C21.5223 6.71327 21.599 7.0204 21.457 7.25719C21.4147 7.32757 21.3559 7.38647 21.2855 7.42869L12.0001 12.9999L2.71463 7.42869C2.47784 7.28662 2.40106 6.97949 2.54313 6.7427C2.58536 6.67232 2.64425 6.61343 2.71463 6.5712L11.4856 1.30864C11.8022 1.11864 12.1979 1.11864 12.5145 1.30864ZM12.0001 3.33233L5.88735 6.99995L12.0001 10.6676L18.1128 6.99995L12.0001 3.33233Z" ></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">Projects</span>
+            </span>
+          </a>
+        </li>
+
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="/articles" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24"fill="#007c52" fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg"  width="24" height="24" style="margin-right: 6px; margin-top: -2px;font-size: 24px;">
+              <path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM7 6H11V10H7V6ZM7 12H17V14H7V12ZM7 16H17V18H7V16ZM13 7H17V9H13V7Z"></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">Articles</span>
+            </span>
+          </a>
+        </li>
+
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="/thoughts" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24" fill="#007c52" fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg"  width="24" height="24" style="margin-right: 6px; margin-top: -2px;font-size: 24px;">
+              <path d="M10 3H14C18.4183 3 22 6.58172 22 11C22 15.4183 18.4183 19 14 19V22.5C9 20.5 2 17.5 2 11C2 6.58172 5.58172 3 10 3ZM12 17H14C17.3137 17 20 14.3137 20 11C20 7.68629 17.3137 5 14 5H10C6.68629 5 4 7.68629 4 11C4 14.61 6.46208 16.9656 12 19.4798V17Z"></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">Thoughts</span>
+            </span>
+          </a>
+        </li>
+
+
+      
+      </ul>
+      <br> </br>
+
+      <h2 style="margin-bottom: 0;  padding-left: 90px">Follow</h2>
+
+      <ul style="padding-inline-start: 0; padding-left: 90px">
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="https://github.com/Mritunjay1121" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24" fill="#007c52" fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg" width="24" height="24" style="margin-right: 6px; margin-top: -2px; font-size: 24px;">
+              <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">Github</span>
+            </span>
+          </a>
+        </li>
+      
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="https://x.com/datascienc_sage" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24" fill="#007c52" fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg" width="24" height="24" style="margin-right: 6px; margin-top: -2px;font-size: 24px;">
+              <path d="M20.576,19.721l-6.852-9.488l4.552-5.602c0.349-0.429,0.283-1.059-0.146-1.407c-0.427-0.347-1.058-0.283-1.406,0.146	l-4.213,5.185L9.057,3.771C8.707,3.287,8.146,3,7.549,3H4.078C3.42,3,3.039,3.746,3.424,4.279l5.911,8.184l-5.611,6.906	c-0.348,0.429-0.283,1.059,0.146,1.407C4.055,20.927,4.278,21,4.5,21c0.291,0,0.579-0.126,0.777-0.369l5.271-6.488l4.396,6.086	c0.35,0.484,0.91,0.771,1.507,0.771h3.471C20.58,21,20.961,20.254,20.576,19.721z" ></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">Twitter</span>
+            </span>
+          </a>
+        </li>
+
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="https://www.linkedin.com/in/mritunjay-b514b0155/" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 50 50" fill="#007c52" fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg" width="24" height="24" style="margin-right: 10px; margin-top: -2px; font-size: 24px;">
+              <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">LinkedIn</span>
+            </span>
+          </a>
+        </li>
+
+        <li style="list-style-type: none; margin-bottom: 0.85rem;">
+          <a href="https://medium.com/@datascience_sage" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <svg viewBox="0 0 50 50" fill="#007c52" fill="currentColor" xmlns="http://www.w3.org/2000/svg" part="svg" width="24" height="24" style="margin-right: 10px; margin-top: -2px;font-size: 24px;">
+              <path d="M15 12A13 13 0 1015 38 13 13 0 1015 12zM35.5 13c-3.59 0-6.5 5.373-6.5 12 0 1.243.102 2.441.292 3.568.253 1.503.662 2.879 1.192 4.065.265.593.56 1.138.881 1.627.642.978 1.388 1.733 2.202 2.201C34.178 36.811 34.827 37 35.5 37s1.322-.189 1.933-.539c.814-.468 1.56-1.223 2.202-2.201.321-.489.616-1.034.881-1.627.53-1.185.939-2.562 1.192-4.065C41.898 27.441 42 26.243 42 25 42 18.373 39.09 13 35.5 13zM45.5 14c-.259 0-.509.173-.743.495-.157.214-.307.494-.448.833-.071.169-.14.353-.206.551-.133.395-.257.846-.37 1.343-.226.995-.409 2.181-.536 3.497-.063.658-.112 1.349-.146 2.065C43.017 23.499 43 24.241 43 25s.017 1.501.051 2.217c.033.716.082 1.407.146 2.065.127 1.316.31 2.501.536 3.497.113.498.237.948.37 1.343.066.198.135.382.206.551.142.339.292.619.448.833C44.991 35.827 45.241 36 45.5 36c1.381 0 2.5-4.925 2.5-11S46.881 14 45.5 14z"></path>
+            </svg>
+            <span style="color: #007c52; font-size: 18px;">
+              <span style="border-bottom: 0.3px solid rgba(0, 124, 82, 0.4); ">Medium</span>
+            </span>
+          </a>
+        </li>
+      </ul >
+      <br> </br>
+
+      <h2 style="padding-left: 90px"> Dumb Clicks 🤦‍♂️  </h2>
+      <div id="recent-photos">
+        <img src="static/resized/1.jpg" alt="Photo 2" class="photo">
+        <img src="static/resized/2.jpg" alt="Photo 3" class="photo">
+        <img src="static/resized/3.jpg" alt="Photo 1" class="photo">
+        <img src="static/resized/4.jpg" alt="Photo 4" class="photo">
+        <img src="static/resized/5.jpg" alt="Photo 5" class="photo">
+        <img src="static/resized/6.jpg" alt="Photo 6" class="photo">
+
+
+
+      </div>
+      <br> </br>
+
+      
+
+
+  </div>
+  <br> </br>
+
+
+  <div class="right-column">
+
+    <h2 style="font-size: 65px; margin-top: -5px; display: flex; align-items: center;">
+      Thoughts
+      <svg viewBox="0 0 24 24" fill="#ff5100" xmlns="http://www.w3.org/2000/svg" part="svg" width="65" height="65" style="margin-left: 15px; margin-top: -5px; font-size: 65px;">
+        <path d="M10 3H14C18.4183 3 22 6.58172 22 11C22 15.4183 18.4183 19 14 19V22.5C9 20.5 2 17.5 2 11C2 6.58172 5.58172 3 10 3ZM12 17H14C17.3137 17 20 14.3137 20 11C20 7.68629 17.3137 5 14 5H10C6.68629 5 4 7.68629 4 11C4 14.61 6.46208 16.9656 12 19.4798V17Z"></path>
+      </svg>
+    </h2>
+
+   
+    <p style="margin-top: -20px;font-size: 20px;"> This is the most interesting part where you can scroll and just simply connect with me if you relate to it.
+    <hr style="margin-top: 10px; margin-bottom: 20px; border-top: 8px solid #000; margin:3rem auto; width:150px;">
+
+
+
+
+
+    <br> </br>
+    <div class="a-card">
+      <div class="vertical-line"></div>
+      <div class="vertical-linee"></div>
+      <h2  style="font-size: 50px; margin-top: -10px;"> Existential Scarcity </h2>
+
+      <p style="font-size: 20px;"> Nowadays I am thinking we need a 9 to 5 job even when we already saw in <strong>CORONO</strong> times that this software sector could work completely remotely. </p>
+      <p style="font-size: 20px;"> If we can be free and work then why we need office spaces ? </p>
+    </div>
+    <br> </br>
+
+    <br> </br>
+
+
+
+    <div class="a-card">
+      <div class="vertical-line"></div>
+      <div class="vertical-linee"></div>
+      <h2 style="font-size: 50px; margin-top: -10px;"> Comparison with the <strong>WEST </strong> 🗽</h2>
+
+      <p style="font-size: 20px;"> What <strong>US </strong> and other western developed countries have experienced about 15 to 20 years before , <strong> INDIA</strong> will be experiencing this now. </p>
+      <p style="font-size: 20px;"> And byt his I means all the things where it is realated to software industry growth, the behavioural change about the perspective of people, the existential values of society, perpectives of the other developing world : the economy, the competition in growth ; everything.</p>
+      <p style="font-size: 20px;"> Last but no least, food for thought is <strong> MARRIAGE</strong> . I know it would be a scary thought . Surely will start a article related to it.</p>
+    </div>
+
+    
+
+
+
+    
+
+   
+
+
+    
+
+   
+
+  </div>
+</div>
+
+<body style="margin: 0; padding: 20px; box-sizing: border-box;">
+
+  <div style="border: 2px solid rgba(0, 124, 82, 1); background-color: rgba(0, 124, 82, 1); padding: 20px; height: 90px; width: calc(100% - 90px);font-size: 25px; font-family: Lexend, sans-serif; font-size: 16px; color: #fff; text-align: center; line-height: 50px; box-sizing: border-box; border-radius: 10px;">
+    You have reached the end of this page. Navigate to other pages to know me better. Feel free to contact me.
+  </div>
+</body>
+</body>
+</html>
