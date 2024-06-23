@@ -43,8 +43,8 @@ def home():
 
 
 
-    kerela_path = "static/resized/k2.jpg"
-    mine="static/resized/1.jpg"
+    kerela_path = "static/k2.jpg"
+    mine="static/1.jpg"
 
 
     recent_image1=other_images(mine)
