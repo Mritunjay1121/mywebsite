@@ -15,8 +15,8 @@ def image_upper(image_path):
     return img_str
 
 def other_images(image_path):
-    new_width = 720 # Adjust the new width as needed
-    new_height = 550  # Adjust the new height as needed
+    new_width = 500 # Adjust the new width as needed
+    new_height = 300  # Adjust the new height as needed
     image = Image.open(image_path)
     # Resize the image with the new dimensions while maintaining the aspect ratio
     resized_image = image.resize((new_width, new_height))
